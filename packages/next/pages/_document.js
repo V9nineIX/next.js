@@ -373,6 +373,9 @@ export class NextScript extends Component {
 
   static getInlineScriptSource(documentProps) {
     const { __NEXT_DATA__ } = documentProps
+    documentProps.props = {};
+    documentProps.initialReduxState ={};
+    
     try {
       const data = JSON.stringify(__NEXT_DATA__)
       return htmlEscapeJsonString(data)
